@@ -11,7 +11,7 @@ const Carts = ({ items = [], removeItemHandler, confirmOrder = () => {} }) => {
             <h1 className="text-2xl font-bold text-red-500 py-2">
                 Your Cart ({totalQt})
             </h1>
-            {totalQt > 0 ? ( // ✅ Ensure only non-zero quantity items are displayed
+            {totalQt > 0 ? (
                 <div>
                     <ul className="flex flex-col">
                         {items.map((item, index) =>
@@ -46,7 +46,7 @@ const Carts = ({ items = [], removeItemHandler, confirmOrder = () => {} }) => {
                 </div>
             ) : (
                 <div className="flex flex-col justify-center items-center w-full gap-3 grow">
-                    <img src="/svgicons/illustration-empty-cart.svg" alt="Empty Cart" />
+                    <img src={`${import.meta.env.BASE_URL}svgicons/illustration-empty-cart.svg`} alt="Empty Cart" />
                     <p className="text-rose-500 font-semibold">Your added items will appear here</p>
                 </div>
             )}

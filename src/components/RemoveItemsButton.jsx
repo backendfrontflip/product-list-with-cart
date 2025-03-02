@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const RemoveItemButton = ({ onClick }) => {
   return (
@@ -6,7 +6,7 @@ const RemoveItemButton = ({ onClick }) => {
       className="h-6 w-6 bg-white border border-gray-500 text-gray-500 rounded-full flex justify-center items-center hover:text-red hover:border-red"
       onClick={onClick}
     >
-      <img src="/svgicons/icon-remove-item.svg" alt="Remove Item" />
+      <img src={`${import.meta.env.BASE_URL}svgicons/icon-remove-item.svg`} alt="Remove Item" />
     </button>
   );
 };

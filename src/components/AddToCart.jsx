@@ -16,19 +16,19 @@ const AddToCart = ({ className, onClick = () => {}, productQt }) => {
 
     useEffect(() => {
         if (quantity !== productQt) {
-            console.log("Updating cart with quantity:", quantity); // ✅ Debugging log
+            console.log("Updating cart with quantity:", quantity);
             onClick(quantity);
         }
-    }, [quantity]); // ✅ Only runs when quantity changes
+    }, [quantity]);
 
     return (
         <div className={className}>
             {quantity === 0 ? (
                 <div
-                    className="bg-white border-rose-500 border-[1px] w-36 flex flex-row items-center justify-center h-10 rounded-full gap-2 hover:text-red hover:cursor-pointer"
+                    className="bg-white border-rose-500 border-[1px] w-36 flex flex-row items-center justify-center h-10 rounded-full gap-2 hover:text-gray-500 hover:cursor-pointer"
                     onClick={() => handleQuantityChange("+")}
                 >
-                    <img src="/svgicons/icon-add-to-cart.svg" alt="Add to Cart"/>
+                    <img src={`${import.meta.env.BASE_URL}svgicons/icon-add-to-cart.svg`} alt="Add to Cart" />
                     <p className="font-bold text-sm">Add to Cart</p>
                 </div>
             ) : (
@@ -37,14 +37,14 @@ const AddToCart = ({ className, onClick = () => {}, productQt }) => {
                         className="rounded-full h-6 w-6 flex items-center justify-center text-white border border-transparent hover:bg-black hover:text-red hover:border-red"
                         onClick={() => handleQuantityChange("-")}
                     >
-                        <img src="/svgicons/icon-decrement-quantity.svg" alt="Decrement Quantity"/>
+                        <img src={`${import.meta.env.BASE_URL}svgicons/icon-decrement-quantity.svg`} alt="Decrement Quantity" />
                     </button>
                     <div className="text-white text-lg">{quantity}</div>
                     <button
                         className="rounded-full h-6 w-6 flex items-center justify-center text-white border border-transparent hover:bg-black hover:text-red hover:border-red"
                         onClick={() => handleQuantityChange("+")}
                     >
-                        <img src="/svgicons/icon-increment-quantity.svg" alt="Increment Quantity" />
+                        <img src={`${import.meta.env.BASE_URL}svgicons/icon-increment-quantity.svg`} alt="Increment Quantity" />
                     </button>
                 </div>
             )}
