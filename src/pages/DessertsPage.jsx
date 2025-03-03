@@ -42,7 +42,8 @@ const DessertsPage = () => {
                 ))}
             </div>
 
-            <div className="mt-12">
+            {/* Increased space between product list and cart */}
+            <div className="mt-20 lg:mt-24">
                 <Carts items={cartItems} removeItemHandler={removeItemHandler} confirmOrder={handleConfirmOrder} />
                 {isPopUpToggled && <ConfirmationPopUp newOrder={handleNewOrder} toggleOff={() => setIsPopUpToggled(false)} items={cartItems} />}
             </div>
