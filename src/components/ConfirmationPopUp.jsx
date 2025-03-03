@@ -7,11 +7,10 @@ const ConfirmationPopUp = ({ items = [], newOrder, toggleOff }) => {
     );
 
     return (
-        <div className="fixed inset-0 h-screen w-screen bg-black bg-opacity-50 flex justify-center items-end sm:items-center md:items-center">
+        <div className="fixed inset-0 h-screen w-screen bg-black bg-opacity-50 flex items-center justify-center">
             <div className="fixed inset-0 h-screen w-screen" onClick={toggleOff}></div>
-            <div className="min-h-96 w-[450px] rounded-md bg-gray-100 p-8 z-10">
+            <div className="min-h-96 w-[450px] max-w-[90%] rounded-md bg-gray-100 p-8 z-10">
                 <div className="flex flex-col items-start w-full gap-4">
-                    
                     <img
                         src={`${import.meta.env.BASE_URL}svgicons/icon-order-confirmed.svg`}
                         alt="Order Confirmed"
